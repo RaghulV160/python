@@ -1,6 +1,10 @@
-a=input()
-b=a.split()
-if(len(b)==1):
-    print("LESS")
-else:
-    print(b[1].upper())
+def count_words_with_length_at_least(s, L):
+    words = s.split()
+    count = 0
+    for word in words:
+        if len(word) >= L:
+            count += 1
+    print(count)
+S = input().strip()
+L = int(input())
+count_words_with_length_at_least(S, L)
