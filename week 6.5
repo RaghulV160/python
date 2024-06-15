@@ -1,8 +1,14 @@
-n1 = int(input())
-array1 = [int(input()) for _ in range(n1)]
-n2 = int(input())
-array2 = [int(input()) for _ in range(n2)]
-merged_array = list(set(array1 + array2))
-merged_array.sort()
-for num in merged_array:
-    print(num, end=" ")
+def find_mapping(A, B):
+    index_map = {}
+    
+    for i, num in enumerate(B):
+        index_map[num] = i
+    mapping = []
+    for num in A:
+        mapping.append(index_map[num])
+    
+    return mapping
+n = int(input())
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+print(*find_mapping(A, B))
