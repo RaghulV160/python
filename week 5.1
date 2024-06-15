@@ -1,15 +1,17 @@
-s=input()
-l=[]
-for i in s:
-    if(i.isalpha()):
-        l.append(i)
-l.reverse()
-result=''
-index=0
-for i in s:
-    if(i.isalpha()):
-        result+=l[index]
-        index+=1
-    else:
-        result+=i
-print(result)
+def display_unique_words():
+    unique_words = set()
+    entered_words = []    
+    while True:
+        try:
+            word = input()
+            if not word:  
+                break
+            entered_words.append(word)  
+            unique_words.add(word)      
+        except EOFError:
+            break
+    for word in entered_words:
+        if word in unique_words:
+            print(word)
+            unique_words.remove(word)
+display_unique_words()
