@@ -1,5 +1,17 @@
-wrd=input()
-if(wrd=="break" or wrd=="case" or wrd=="continue" or wrd=="default" or wrd=="else" or wrd=="for" or wrd=="func" or wrd=="goto" or wrd=="if" or wrd=="map" or wrd=="range" or wrd=="return" or wrd=="struct" or wrd=="type" or wrd=="var"):
-    print(wrd, "is a keyword")
-else:
-    print(wrd, "is not a keyword")
+def repeat_characters(s):
+    result = ''
+    i = 0
+    while i < len(s):
+        if s[i].isalpha():
+            char = s[i]
+            i += 1
+            repeat_count = 0
+            while i < len(s) and s[i].isdigit():
+                repeat_count = repeat_count * 10 + int(s[i])
+                i += 1
+            result += char * repeat_count
+        else:
+            i += 1
+    return result
+user_input = input()
+print(repeat_characters(user_input))
