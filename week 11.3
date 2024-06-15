@@ -1,0 +1,8 @@
+try:
+    x=float(input())
+    y=float(input())
+    print(x/y)
+except ValueError:
+    print("Error: Non-numeric input provided.")
+except ZeroDivisionError:
+    print("Error: Cannot divide or modulo by zero.")
