@@ -1,10 +1,6 @@
-a=int(input())
-y1=(a*4)/100
-a1=a+y1
-y2=a1*4/100
-a2=a1+y2
-y3=a2*4/100
-a3=a2+y3
-print("Balance as of end of Year 1: $","{:.2f}".format(a1),".",sep="")
-print("Balance as of end of Year 2: $","{:.2f}".format(a2),".",sep="")
-print("Balance as of end of Year 3: $","{:.2f}".format(a3),".",sep="")
+a=float(input())
+b=0.04
+c=3
+for i in range(1,c+1):
+    d=a*(1+b)**i
+    print(f"Balance as of end of Year {i}: ${d:.2f}.")
