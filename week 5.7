@@ -1,11 +1,9 @@
-unique_words = set()
-ordered_words = []
-while True:
-    word = input().strip()
-    if not word:
-        break
-    if word not in unique_words:
-        unique_words.add(word)
-        ordered_words.append(word)
-for word in ordered_words:
-    print(word)
+keywords = {
+    "break", "case", "continue", "default", "defer", "else", "for",
+    "func", "goto", "if", "map", "range", "return", "struct", "type", "var"
+}
+user_input = input()
+if user_input in keywords:
+    print(user_input, "is a keyword")
+else:
+    print(user_input, "is not a keyword")
