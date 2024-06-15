@@ -1,12 +1,12 @@
-s1 = input()
-s2 = input()
-words = (s1 + " " + s2).split()
-c = {}
-for word in words:
-    if word in c:
-        c[word] += 1
+from collections import Counter
+num = int(input())
+vote= {}
+for _ in range(num):
+    c = input()
+    if c in vote:
+        vote[c] += 1
     else:
-        c[word] = 1
-u = [word for word, count in c.items() if count == 1]
-o = " ".join(u)
-print(o)
+        vote[c] = 1
+max_votes = max(vote.values())
+candidates_with_max_votes = [c for c, votes in vote.items() if votes == max_votes]
+print(sorted(candidates_with_max_votes)[0])
