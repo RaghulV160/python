@@ -1,0 +1,10 @@
+import math
+def is_power_of_four(n):
+    if n <= 0:
+        return False
+    x = math.log(n, 4)
+    return x.is_integer()
+
+if __name__ == "__main__":
+    n = int(input())
+    print(is_power_of_four(n))
