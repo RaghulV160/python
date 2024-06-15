@@ -1,24 +1,29 @@
-a=int(input())
+def zip_lists(list1, list2):
+    zipped_list = []
+    for sublist1, sublist2 in zip(list1, list2):
+        zipped_list.append(sublist1 + sublist2)
+    return zipped_list
 
-for  i in range(a):
-    l=[]
-    b=int(input())
-    t=1
-    for j in range(b):
-        l.append(int(input()))
-    
-    c=int(input())
-    for m in range(len(l)-1):
-        
-        for s in range(m+1,len(l)):
-        
-            if (abs(l[m]-l[s])==c ):
-                
-                t=0
-            
-                break
-        
-    if(t==1):
-        print("0")
-    else:
-        print("1")
+def main():
+    m = int(input())
+    n = int(input())
+ 
+    list1 = []
+    for _ in range(m):
+        sublist = []
+        for _ in range(n):
+            sublist.append(int(input()))
+        list1.append(sublist)
+       
+    list2 = []
+    for _ in range(m):
+        sublist = []
+        for _ in range(n):
+            sublist.append(int(input()))
+        list2.append(sublist)
+   
+    zipped_list = zip_lists(list1, list2)
+    print(zipped_list)
+
+if __name__ == "__main__":
+    main()
